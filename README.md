@@ -91,3 +91,7 @@ Happy hacking!
   ```git
   npm install react react-dom --save
 ```
+#index.html data explicacion ReactDOM
+```js
+ReactDOM.render('que voy a renderizar', 'donde lo haré');
+```
