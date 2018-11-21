@@ -1,0 +1,36 @@
+{
+  "name": "az-video",
+  "version": "1.0.0",
+  "description": "facebook/create-react-app\r # instalacion de npm previo, junto con node\r # instalacion de React.js libreria, desde terminal\r valido con version de npm superior a 5.2\r npx create-react-app my-app\r cd my-app\r npm start",
+  "main": "webpack-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelbarusta/React.js.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Angel Barusta",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "clean-webpack-plugin": "0.1.17",
+    "css-loader": "0.28.7",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.5",
+    "style-loader": "0.19.0",
+    "url-loader": "0.6.2",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.3"
+  },
+  "bugs": {
+    "url": "https://github.com/angelbarusta/React.js/issues"
+  },
+  "homepage": "https://github.com/angelbarusta/React.js#readme"
+}
