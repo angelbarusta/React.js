@@ -33,7 +33,7 @@ We suggest that you begin by typing:
 Happy hacking!
 ```
 # Dependencias
-```js
+```json
 "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
     "cheet.js": "0.3.3",
@@ -61,3 +61,13 @@ Happy hacking!
   ```
   ## despues instalarlas
   npm i
+  ## scrips
+  ```json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack-dev-server --config ./webpack.dev.config.js",
+    "build": "webpack",
+    "build:local": "webpack --env.NODE_ENV=local",
+    "build:prod": "webpack -p --env.NODE_ENV=production"
+  }
+  ```
