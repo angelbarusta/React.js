@@ -7,7 +7,7 @@ cd my-app
 npm start
 
 #Se plasmara success
-```js
+```gitbash
 Success! Created my-app at C:\Users\User\Desktop\reactjs\React.js\my-app
 Inside that directory, you can run several commands:
 
