@@ -4,7 +4,11 @@
   "description": "facebook/create-react-app\r # instalacion de npm previo, junto con node\r # instalacion de React.js libreria, desde terminal\r valido con version de npm superior a 5.2\r npx create-react-app my-app\r cd my-app\r npm start",
   "main": "webpack-config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack-dev-server --config ./webpack.dev.config.js",
+    "build": "webpack",
+    "build:local": "webpack --env.NODE_ENV=local",
+    "build:prod": "webpack -p --env.NODE_ENV=production"
   },
   "repository": {
     "type": "git",
