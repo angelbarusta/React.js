@@ -1,10 +1,8 @@
-'use-strict'
-
 const path = require('path');
 
 module.exports = {
   entry: {
-    "az-video": path.resolve(__dirname, 'index.js'),// aqui se modifica el nombre de proyecto,
+    'az-video': path.resolve(__dirname, 'index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

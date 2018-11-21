@@ -33,18 +33,26 @@ We suggest that you begin by typing:
 Happy hacking!
 ```
 # Dependencias
-```js
+```json
 "dependencies": {
-    "babel-preset-stage-2": "^6.24.1",
     "cheet.js": "0.3.3",
     "react": "15.4.2",
     "react-addons-css-transition-group": "15.4.2",
     "react-dom": "15.4.2",
     "react-redux": "5.0.3",
-    "redux": "3.6.0"
+    "redux": "3.6.0",
+    //para los test
+     "chalk": "2.4.1",
+    "debug": "4.1.0",
+    "defaults": "1.0.3",
+    "inquirer": "6.2.0",
+    "pg": "7.6.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "4.41.1"
   }
 
   "devDependencies": {
+    "babel-preset-stage-2": "6.24.1",
     "babel-core": "6.26.0",// para interpretar modelos modernos de js
     "babel-loader": "7.1.2",
     "babel-preset-es2015": "6.24.1",// para aguantar las configuraciones
@@ -56,8 +64,82 @@ Happy hacking!
     "style-loader": "0.19.0",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.3"
+    "webpack-dev-server": "2.9.3",
+    // para los test y erros
+    "ava": "0.25.0",
+    "nyc": "13.1.0",
+    "proxyquire": "2.1.0",
+    "sinon": "7.1.1",
+    "sqlite3": "4.0.3",
+    "standard": "12.0.1"
   }
   ```
   ## despues instalarlas
   npm i
+  ## scrips
+  ```json
+  "scripts": {
+    "build:dev": "webpack-dev-server --config ./webpack.dev.config.js",
+    "build": "webpack",
+    "build:local": "webpack --env.NODE_ENV=local",
+    "build:prod": "webpack -p --env.NODE_ENV=production",
+    //para los test y erros
+    "lint": "standard --fix"
+  }
+  ```
+  
+  ```js
+  entry: {
+            "az-video": path.resolve(__dirname, 'index.js'),
+        },
+        output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'js/[name].js',
+        },
+        devServer: {
+            port:9000,
+        },
+        module: {
+            rules: [
+                {
+                    //test que tipo de archivo quiero conocer
+                    //use: que loader se va a cargar del archivo
+                    test: /\.(js|jsx)$/,
+                    exclude: /(node_modules)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015', 'react', 'stage-2'],
+                        }
+                    },
+                },
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract({
+                        use: [
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    minimize: true,
+                                }
+                            }
+                        ]
+                    })
+                },
+                {
+                    test: /\.(jpg|png|gif|svg)$/,
+                    use: {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            fallback: 'file-loader',
+                            name: 'images/[name].[hash].[ext]',
+                        }
+                    }
+                },
+            ]
+        },
+        plugins
+    }
+}
+```
