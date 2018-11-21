@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    invie: path.resolve(__dirname, 'src/index.js'),
+    "az-video": path.resolve(__dirname, 'index.js'),// aqui se modifica el nombre de proyecto,
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

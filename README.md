@@ -32,3 +32,32 @@ We suggest that you begin by typing:
 
 Happy hacking!
 ```
+# Dependencias
+```js
+"dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
+    "cheet.js": "0.3.3",
+    "react": "15.4.2",
+    "react-addons-css-transition-group": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-redux": "5.0.3",
+    "redux": "3.6.0"
+  }
+
+  "devDependencies": {
+    "babel-core": "6.26.0",// para interpretar modelos modernos de js
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",// para aguantar las configuraciones
+    "babel-preset-react": "6.24.1",
+    "clean-webpack-plugin": "0.1.17",// para limpiar carpetas en archivos en produccion
+    "css-loader": "0.28.7",// para aguantar archivos de css
+    "extract-text-webpack-plugin": "3.0.2",// para extraer los archivos de css
+    "file-loader": "1.1.5",
+    "style-loader": "0.19.0",
+    "url-loader": "0.6.2",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.3"
+  }
+  ```
+  ## despues instalarlas
+  npm i
