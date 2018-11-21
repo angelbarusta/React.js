@@ -1,5 +1,6 @@
 # React.js
-## instalacion de npm previo, junto con node
+facebook/create-react-app
+# instalacion de npm previo, junto con node
 # instalacion de React.js libreria, desde terminal
 valido con version de npm superior a 5.2
 npx create-react-app my-app
@@ -7,7 +8,7 @@ cd my-app
 npm start
 
 #Se plasmara success
-```gitbash
+```git
 Success! Created my-app at C:\Users\User\Desktop\reactjs\React.js\my-app
 Inside that directory, you can run several commands:
 
