@@ -1,5 +1,5 @@
 import React, { Componentes } from 'react';
-import './media.css';
+import Mediacss from'./css/media.css';
 class Media extends React.Component {
     render() {
         const styles = {
