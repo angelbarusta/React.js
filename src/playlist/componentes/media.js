@@ -1,5 +1,5 @@
 import React, { Componentes } from 'react';
-
+import './media.css';
 class Media extends React.Component {
     render() {
         const styles = {
@@ -9,18 +9,19 @@ class Media extends React.Component {
                 color: 'white', //color del texto
                 cursor: 'pointer',
                 width:260,
-                border: '1px solid blue'
+                border: '1px solid blue',
+                
             }
         }
         return (
-            <div style={ styles.container}>
+            <div className="Media">
               <div>
-                  <img src="./imagenes/doky.jpg"
+                  <img src="./src/imagenes/doky.jpeg"
                        alt=""
                        width={260}
                        height={160}
                        />
-                       <h3>aprendiendo React...</h3>
+                       <h3>AZ-pets</h3>
                        <p>Angel Barusta</p>
               </div>
             </div>
