@@ -2,7 +2,7 @@
 // Los componentes siempre empiezan en mayuscula
 import React from 'react';
 import { render } from 'react-dom';
-import Media from './src/playlist/componentes/media';
+import Media from './src/playlist/componentes/media.js';
 
 //console.log('Hola mundo')
 
