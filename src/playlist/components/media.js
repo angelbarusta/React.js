@@ -1,20 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
-class Media extends React.Component {
-
-   /* constructor(props) {  //es2015
-        super(props)
-        this.state = {
-            author: props.author
-        }
-        //this.handleClick = this.handleClick.bind(this);
-    }*/
-//----------------------------------------------------------
+class Media extends PureComponent {
     state = { // stage-2
         author: 'Angel Barusta',
     }
-//------------------------------------------------------------
 //------------------------------------------------------------
     handleClick = (event) => { //  stage-2
         //funsion para cambiar el state
