@@ -95,6 +95,7 @@ Happy hacking!
 ```js
 ReactDOM.render('que voy a renderizar', 'donde lo haré');
 ```
+#documentacion de ciclos de vida de los componentes
 ```js
 class Mi componente extends Componentes {
 
