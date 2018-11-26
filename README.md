@@ -95,3 +95,40 @@ Happy hacking!
 ```js
 ReactDOM.render('que voy a renderizar', 'donde lo haré');
 ```
+```js
+class Mi componente extends Componentes {
+
+ constructor() {
+
+ }
+ componentWillMount() {
+
+ }
+ render() {
+
+ }
+ componenteDidMount() {
+
+ }
+ componentWillReceiveProps() {
+
+ }
+ shouldComponentUpdate() {
+
+ }
+ componentWillUpdate() {
+
+ }
+ componentDidUpdate() {
+
+ }
+ componentWillUnmount() {
+
+ }
+ componentDidCatch() {
+
+ }
+
+
+}
+```
