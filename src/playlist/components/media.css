@@ -2,8 +2,8 @@
     cursor: pointer;
     margin-right: 25px;
     display: inline-block;
+    height: 330px;
     width: 320px;
-    height: 320px;
     vertical-align: top;
     
 }
@@ -16,13 +16,13 @@
     transition: .1s;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
     height: 260px;
-    width: 260px;
+    width: 330px;
 }
 
 .Media-image {
     object-fit: cover;
     height: 260px;
-    width: 260px;
+    width: 330px;
 }
 
 .Media-title {
