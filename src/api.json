@@ -1,0 +1,146 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "description": "Lo mejor de la semana",
+        "title": "Destacados",
+        "playlist": [
+          {
+            "title": "¿Qué es AZ-Tech?",
+            "author": "Angel Barusta",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 1
+          },
+          {
+            "title": "AZ-Ykan",
+            "author": "Angel Barusta",
+            "type": "video",
+            "cover": "./src/imagenes/ykaninfo.jpeg",
+            "src": "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+            "id": 2
+          },
+          {
+            "title": "AZ-SSS",
+            "author": "Viridiana Diaz",
+            "type": "video",
+            "cover": "./src/imagenes/az-sss.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 3
+          },
+          {
+            "title": "AZ-SMS",
+            "author": "Angel Barusta",
+            "type": "video",
+            "cover": "./src/imagenes/az-sms.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 4
+          },
+          {
+            "title": "AZ-Pets",
+            "author": "Viridiana Diaz",
+            "type": "video",
+            "cover": "./src/imagenes/huellita.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 5
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "description": "Lo mejor para concentrarte",
+        "title": "Para programar",
+        "playlist": [
+          {
+            "title": "One more time",
+            "author": "Daft Punk",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 1
+          },
+          {
+            "title": "Midnight City",
+            "author": "M83",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 5
+          },
+          {
+            "title": "Solar Sailer",
+            "author": "Daft Punk",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 2
+          },
+          {
+            "title": "The social network",
+            "author": "The social network",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 4
+          },
+          {
+            "title": "No vaya a ser",
+            "author": "Pablo Alboran",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Si no te queda de otra",
+        "title": "Regueton",
+        "playlist": [
+          {
+            "title": "Despacito",
+            "author": "Luis Fonsi",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 1
+          },
+          {
+            "title": "Echame la culpa",
+            "author": "Luis fonsi",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 3
+          },
+          {
+            "title": "Mi Gente",
+            "author": "J Bavil",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 2
+          },
+          {
+            "title": "Felices los 4",
+            "author": "Maluma",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 4
+          },
+          {
+            "title": "Me Rehúso",
+            "author": "Danny Ocean",
+            "type": "video",
+            "cover": "./src/imagenes/az_tech.jpeg",
+            "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+            "id": 5
+          }
+        ]
+      }
+    ]
+  }
+  
