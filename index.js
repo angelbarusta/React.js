@@ -11,4 +11,4 @@ const app = document.getElementById('app');
 //const holamundo = <h1>AZ-Tech!!</h1>;
 
 //ReactDOM.render(que voy a realizar, en dónde lo haré);
-render(<Media/>, app);
+render(<Media title="AZ-Tech" author="Angel Barusta" image="./src/imagenes/az_tech.jpeg"/>, app);
