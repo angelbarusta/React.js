@@ -88,7 +88,7 @@ Happy hacking!
   }
   ```
   #instalamos dependencias de react
-  ```git
+  ```
   npm install react react-dom --save
 ```
 #index.html data explicacion ReactDOM
