@@ -42,8 +42,8 @@ class Media extends React.Component {
                   <img 
                        src={this.props.cover}
                        alt=""
-                       width={260}
-                       height={160}
+                       width={260} //ancho de imagenes
+                       height={160}//alto de imagenes
                        className="Media-image"
                        />
                        <h3 className="Media-title">{this.props.title}</h3>
