@@ -3,6 +3,9 @@ import React from 'react';
 import Media from './media.js';
 import './playlist.css';
 import Play from '../../icons/components/play';
+import Pause from '../../icons/components/pause';
+import Volumen from '../../icons/components/volumen';
+import Fullscreem from '../../icons/components/fullscreem';
 
 
 
@@ -15,6 +18,19 @@ function Playlist(props) { //componente playlist functional
                size={100}
                color="#00FFFF"
              />
+              <Pause
+               size={100}
+               color="#00FF40"
+             />
+              <Volumen
+               size={100}
+               color="#FFFF00"
+             />
+              <Fullscreem
+               size={100}
+               color="#FE2EF7"
+             />
+
                 {
                     playlist.map((item)=>{
                        return <Media {...item} key={item.id} />
