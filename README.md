@@ -98,38 +98,67 @@ ReactDOM.render('que voy a renderizar', 'donde lo haré');
 #documentacion de ciclos de vida de los componentes
 ```js
 class Mi componente extends Componentes {
+//---------------montado 1°parte----------------------------------------------------------
 
- constructor() {
+//-------------primer componente------------------------------------------------------------
+ constructor() {//cuando queremos instanciar una clase
+                //poner estado inicial o bindiar eventos, poner propiedades a this
+ }
+ //------------------------------------------------------------------------------------------
+
+ //-------------metodo llamado antes de montarse----------------------------------------------
+ componentWillMount() {// si tenemos una propieedad y queremos setear con base a esas //propiedades
+//setState()
+ }
+ //-----------------------------------------------------------------------------------------
+ //------------------------donde ponemos todos nuestros elementos---------------------------
+ render() {// contiene jsx en el return
+ //todos los elementos a renderizar
 
  }
- componentWillMount() {
+ //-----------------------------------------------------------------------------------------
+
+ //-----------------------------cuando los componentes ya se han montado, ya esta en pantalla
+ componenteDidMount() {// para hacer setTimeOut(), setInterval(), llamar datos asia una API
 
  }
- render() {
+ //-----------------------------------------------------------------------------------------
 
- }
- componenteDidMount() {
-
- }
+ //-----------------------------actualizacion 2° parte--------------------------------------
+ //------------------------------el componente recibira propiedades?------------------------
  componentWillReceiveProps() {
-
+//sirve para actualizar el estado
  }
+ //----------------------------------------------------------------------------------------
+ //---------------se condiciona si el componente se debe volver a renderizar---------------
  shouldComponentUpdate() {
-
+// para optimizar el rendimiendo y no hacer re-render
  }
+ //--------------------------------------------------------------------------------------
+ //---------------- si existen cambios se actualiza y se re-renderiza-----------------
  componentWillUpdate() {
-
+//manda re-render
  }
+ //---------------------------------------------------------------------------------------
+ //-----------------------------despues del re-render-------------------------------------
  componentDidUpdate() {
-
+//se actualizo
  }
+ //---------------------------------------------------------------------------------------
+
+ //----------------------desmontado  3° parte---------------------------------------------
+ // ---------se llama una vez de que el componente se sale de la aplicacion---------------
  componentWillUnmount() {
 
  }
+ //---------------------------------------------------------------------------------------
+
+ //-------------------manejo de errores 4° parte -----------------------------------------
+ //------------------- cuando se encuentra un error-------------------------------------
  componentDidCatch() {
-
+//se invovca cuando existe algun error al renderizar el componente, el manejo de errores solo //existe en ramas hijos
  }
-
+//---------------------------------------------------------------------------------------
 
 }
 ```
