@@ -2,15 +2,29 @@ import React, { Componentes } from 'react';
 import './media.css';
 class Media extends React.Component {
 
-    /*constructor(props) {  es2015
+   /* constructor(props) {  //es2015
         super(props)
-        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            author: props.author
+        }
+        //this.handleClick = this.handleClick.bind(this);
     }*/
-
-    handleClick = (event) => { //  stage-2
-        console.log(this.props.title)
+//----------------------------------------------------------
+    state = { // stage-2
+        author: 'Angel Barusta',
     }
+//------------------------------------------------------------
+//------------------------------------------------------------
+    handleClick = (event) => { //  stage-2
+        //console.log(this.props.title)
 
+        //funsion para cambiar el state
+        this.setState({
+            author: 'Angel varusta',
+        })
+        //------------------------------
+    }
+//--------------------------------------------------------------
     render() {
         const styles = {
             container: {
@@ -33,7 +47,7 @@ class Media extends React.Component {
                        className="Media-image"
                        />
                        <h3 className="Media-title">{this.props.title}</h3>
-                       <p className="Media-title">{this.props.author}</p>
+                       <p className="Media-title">{this.state.author}</p>
               </div>
             </div>
         )
