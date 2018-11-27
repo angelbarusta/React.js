@@ -56,15 +56,15 @@
             "title": "One more time",
             "author": "Daft Punk",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/one-more-time.jpg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 1
           },
           {
-            "title": "Midnight City",
+            "title": "arduino nano v3",
             "author": "M83",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/nano.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 5
           },
@@ -72,7 +72,7 @@
             "title": "Solar Sailer",
             "author": "Daft Punk",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/solar-sailer.jpg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 2
           },
@@ -80,15 +80,15 @@
             "title": "The social network",
             "author": "The social network",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/midnight.jpg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 4
           },
           {
-            "title": "No vaya a ser",
-            "author": "Pablo Alboran",
+            "title": "Gorillaz",
+            "author": "Gorillaz",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/gorillaz.jpg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 3
           }
@@ -96,46 +96,46 @@
       },
       {
         "id": 3,
-        "description": "Si no te queda de otra",
-        "title": "Regueton",
+        "description": "Novedades",
+        "title": "AZ-Pets",
         "playlist": [
           {
-            "title": "Despacito",
-            "author": "Luis Fonsi",
+            "title": "imprecion 3D",
+            "author": "Brian",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/impresion3d_1.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 1
           },
           {
-            "title": "Echame la culpa",
-            "author": "Luis fonsi",
+            "title": "tornillo 3D",
+            "author": "Viridiana Diaz",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/impresion3d_2.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 3
           },
           {
-            "title": "Mi Gente",
-            "author": "J Bavil",
+            "title": "servo motor",
+            "author": "Viridiana Diaz",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/servo_pezas.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 2
           },
           {
-            "title": "Felices los 4",
-            "author": "Maluma",
+            "title": "Servo conexion",
+            "author": "Viridiana Diaz",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/servo_conector.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 4
           },
           {
-            "title": "Me Rehúso",
-            "author": "Danny Ocean",
+            "title": "AZ-Pets",
+            "author": "Viridiana Diaz",
             "type": "video",
-            "cover": "./src/imagenes/az_tech.jpeg",
+            "cover": "./src/imagenes/dispensador.jpeg",
             "src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
             "id": 5
           }
