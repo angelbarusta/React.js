@@ -9,10 +9,10 @@ import data from '../api.json';
 
 //console.log('Hola mundo')
 
-const app = document.getElementById('app');
+const homeContainer = document.getElementById('home-container');
 
 //const holamundo = <h1>AZ-Tech!!</h1>;
 
 //ReactDOM.render(que voy a realizar, en dónde lo haré);
 //render(<Playlist data={data}/>, app);
-render( <Home data={data} />, app)
+render( <Home data={data} />, homeContainer)
