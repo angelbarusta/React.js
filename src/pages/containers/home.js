@@ -4,6 +4,8 @@ import Categories from '../../categories/components/categories';
 import Related from '../components/related';
 import ModalContainer from '../../widgets/containers/modal-container';
 import Modal from '../../widgets/components/modal';
+import handleError from '../../errores/containers/handle-error';
+import HandleError from '../../errores/containers/handle-error';
 
 class Home extends Component {
     state = {
@@ -24,26 +26,29 @@ class Home extends Component {
        })
     }
     //----------------------------------------------------------
+componentDidCatch(error, info) {
+    this.setState({
+        handleError:true,
+    })
+}
+
     render() {
         return (
+            <HandleError>
             <HomeLayout>
                 <Related />
-                  <Categories 
-                     categories={this.props.data.categories} 
-                     handleOpenModal={this.handleOpenModal}
-                     />
-                     {//si la condicion se cumple has lo de las llaves
-                         this.state.modalVisible &&  //si se cumple la condicion
-                  
+                  <Categories categories={this.props.data.categories} handleOpenModal={this.handleOpenModal}/>
+                  {
+                      this.state.modalVisible &&
                        <ModalContainer>
-                           <Modal 
-                               handleClick={this.handleCloseModal}
-                            >
+                           <Modal handleClick={this.handleCloseModal}>
                              <h1>Esto es un portal</h1>
                            </Modal>
                        </ModalContainer>
                   }
+                  
             </HomeLayout>
+            </HandleError>
         )
     }
 }
