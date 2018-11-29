@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import './media.css';
 class Media extends PureComponent {
     state = { // stage-2
-        author: 'Angel Barusta',
+        author: this.props.author,// aqui se descargan datos de author de la api para poder modificarlas
     }
 //------------------------------------------------------------
     handleClick = (event) => { //  stage-2
         //funsion para cambiar el state
+        //console.log("press")
         this.setState({
             author: 'Angel varusta',
         })
@@ -37,7 +38,7 @@ class Media extends PureComponent {
                        className="Media-image"
                        />
                        <h3 className="Media-title">{this.props.title}</h3>
-                       <p className="Media-author">{this.props.author}</p>
+                       <p className="Media-author">{this.state.author}</p>
               </div>
             </div>
         )
