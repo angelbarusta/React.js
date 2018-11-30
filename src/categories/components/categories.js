@@ -6,7 +6,7 @@ import Search from '../../widgets/containers/search';
 const Categories = (props)=>  {
     return (
         <div className= "Categories">
-        <Search/>
+        <Search />
             {
                 props.categories.map((item)=>{
                    return  (

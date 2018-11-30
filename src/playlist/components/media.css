@@ -14,20 +14,27 @@
 
 .Media-cover {
     transition: .1s;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    box-shadow: 0 0 5px rgba(0,0,0,5);
     height: 260px;
     width: 330px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 50px 50px aqua;
 }
 
 .Media-image {
     object-fit: cover;
     height: 260px;
     width: 330px;
+    border-radius: 10px;
+    border: none;
+    
+    
 }
 
 .Media-title {
     margin: 5px 0 0 0;
-    color: #1C1C1C;
+    color: white;
    
     
 }
