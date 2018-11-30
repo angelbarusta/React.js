@@ -5,7 +5,7 @@ import './related.css';
   const Related =(props)=>{
     return(
         <div className="Related">
-            <img src={Logo} width={100} height={100}/>
+            <img  className="Related-img" src={Logo} width={100} height={100}/>
         </div>
     )
 }
