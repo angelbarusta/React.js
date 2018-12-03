@@ -39,7 +39,9 @@ componentDidCatch(error, info) {
             <HandleError>
             <HomeLayout>
                 <Related />
-                 <VideoPlayer />
+                 <VideoPlayer
+                   autoplay
+                 />
                   <Categories categories={this.props.data.categories} handleOpenModal={this.handleOpenModal}/>
                   {
                       this.state.modalVisible &&
