@@ -6,6 +6,7 @@ import PlayPause from '../components/play-pause';
 import Timer from '../components/timmer';
 import ControlVideo from '../components/video-player-control.js';
 import ProgressBar from '../components/progress-bar.js';
+import Spinner from '../components/spinner';
 
 class VideoPlayer extends Component {
  //--------------------------estados iniciales---------------------------------------------------------------------------------------------------------------------------   
@@ -13,6 +14,7 @@ class VideoPlayer extends Component {
         pause: true,  // de claramos un estado inicial
         duration: 0,
         currentTime:0,
+        loading: false,
     }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -24,7 +26,8 @@ class VideoPlayer extends Component {
 //---------------------------------verifica si existe una actualizacion--------------------------------------------------------------------------------------------------------------
     componentDidMount() {
         this.setState({
-            pause: (!this.props.autoplay) // si se cumple esta condicion mansara true, si no mandara false
+            pause: (!this.props.autoplay), // si se cumple esta condicion mansara true, si no mandara false
+            
         })
     }
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,6 +48,16 @@ handleProgressChange = event => {
     this.video.currentTime = event.target.value
     
 }
+handleSeekind = event => {
+    this.setState({
+      loading: true
+    })
+  }
+  handleSeeked = event => {
+    this.setState({
+      loading: false
+    })
+  }
     render() {
         return(
             <VideoPlayerLayout>
@@ -66,14 +79,18 @@ handleProgressChange = event => {
                      handleProgressChange={this.handleProgressChange}
                    />
                 </ControlVideo>
-                
-                <Video
-                   autoplay={this.state.autoplay}
-                   pause={this.state.pause}
-                   handleLoadedMetadata = {this.handleLoadedMetadata}
-                   handleTimeUpdate={this.handleTimeUpdate}
-                   src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+                <Spinner 
+                  active={this.state.loading}
                 />
+                 <Video
+                   autoplay={this.props.autoplay}
+                   pause={this.state.pause}
+                   handleLoadedMetadata={this.handleLoadedMetadata}
+                   handleTimeUpdate={this.handleTimeUpdate}
+                   handleSeekind={this.handleSeekind}
+                   handleSeeked={this.handleSeeked}
+                   src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+        />
             </VideoPlayerLayout>
         )
 
