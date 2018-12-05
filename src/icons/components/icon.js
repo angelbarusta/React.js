@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Icon(props) {
+const Icon=(props)=> {
+    
     const {
         color,
         size,

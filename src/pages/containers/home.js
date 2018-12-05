@@ -4,7 +4,6 @@ import Categories from '../../categories/components/categories';
 import Related from '../components/related';
 import ModalContainer from '../../widgets/containers/modal-container';
 import Modal from '../../widgets/components/modal';
-import handleError from '../../errores/containers/handle-error';
 import HandleError from '../../errores/containers/handle-error';
 import VideoPlayer from '../../player/conteiners/video-player';
 

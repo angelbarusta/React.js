@@ -7,6 +7,7 @@ import Timer from '../components/timmer';
 import ControlVideo from '../components/video-player-control.js';
 import ProgressBar from '../components/progress-bar.js';
 import Spinner from '../components/spinner';
+import Volumen from '../components/volumen.js';
 
 class VideoPlayer extends Component {
  //--------------------------estados iniciales---------------------------------------------------------------------------------------------------------------------------   
@@ -15,6 +16,8 @@ class VideoPlayer extends Component {
         duration: 0,
         currentTime:0,
         loading: false,
+        lastVolumeState: 0,
+	    volume: 1,
     }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -58,6 +61,41 @@ handleSeekind = event => {
       loading: false
     })
   }
+  handleVolumenChange =event => {
+    this.video.volume = event.target.value  //el .volume nos dara la funcion del volumen
+  }
+
+  mute = ()  => {
+    const lastState = this.video.volume
+    this.setState({
+      lastVolumeState: lastState,
+      volume: 0
+    })
+    this.video.volume = 0
+  }
+
+  unmute = () => {
+    this.setState({
+      volume: this.state.lastVolumeState
+    })
+    this.video.volume = this.state.lastVolumeState
+  }
+
+  
+  handleVolumenToggle = event => {
+    console.log(this.video.volume)
+    this.video.volume !== 0 ? this.mute() : this.unmute()
+    console.log(this.video.volume)
+  }
+
+  handleVolumeToggle = event => {
+    this.setState({
+      lastVolume: this.state.volume,
+      volume: this.state.volume===0 ? this.state.lastVolume : 0
+    })
+    this.video.volume = this.state.lastVolume
+  }
+
     render() {
         return(
             <VideoPlayerLayout>
@@ -65,6 +103,7 @@ handleSeekind = event => {
                    title="Este es el video"
                 />
                 <ControlVideo>
+
                    <PlayPause 
                    pause={this.state.pause} // mandamos la propiedad del estado de pause
                    handleClick={this.togglePlay}
@@ -78,7 +117,14 @@ handleSeekind = event => {
                      value={this.state.currentTime}
                      handleProgressChange={this.handleProgressChange}
                    />
+                   <Volumen
+                     handleVolumenChange={this.handleVolumenChange}
+                     handleVolumenToggle={this.handleVolumenToggle}
+			         value={this.state.volumen}
+                   />
+
                 </ControlVideo>
+
                 <Spinner 
                   active={this.state.loading}
                 />
