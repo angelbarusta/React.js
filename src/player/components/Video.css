@@ -1,7 +1,8 @@
-.video {
-   width: inherit;
+.Video {
+    width: inherit;
 }
-.video video {
+.Video video {
     width: inherit;
     vertical-align: middle;
+    
 }

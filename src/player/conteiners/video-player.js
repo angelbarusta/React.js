@@ -7,6 +7,7 @@ import Timer from '../components/timmer';
 import ControlVideo from '../components/video-player-control.js';
 import ProgressBar from '../components/progress-bar.js';
 import Spinner from '../components/spinner';
+import Volumen from '../components/volumen.js';
 
 class VideoPlayer extends Component {
  //--------------------------estados iniciales---------------------------------------------------------------------------------------------------------------------------   
@@ -58,6 +59,9 @@ handleSeekind = event => {
       loading: false
     })
   }
+  handleVolumenChange =event => {
+    this.video.volume = event.target.value  //el .volume nos dara la funcion del volumen
+  }
     render() {
         return(
             <VideoPlayerLayout>
@@ -65,6 +69,7 @@ handleSeekind = event => {
                    title="Este es el video"
                 />
                 <ControlVideo>
+
                    <PlayPause 
                    pause={this.state.pause} // mandamos la propiedad del estado de pause
                    handleClick={this.togglePlay}
@@ -78,7 +83,12 @@ handleSeekind = event => {
                      value={this.state.currentTime}
                      handleProgressChange={this.handleProgressChange}
                    />
+                   <Volumen
+                     handleVolumenChange={this.handleVolumenChange}
+                   />
+
                 </ControlVideo>
+
                 <Spinner 
                   active={this.state.loading}
                 />
