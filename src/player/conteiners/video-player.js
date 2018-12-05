@@ -115,7 +115,7 @@ handleSeekind = event => {
               setRef={this.setRef}
             >
                 <Title 
-                   title="Este es el video"
+                   title={this.props.title}
                 />
                 <ControlVideo>
 
@@ -154,7 +154,7 @@ handleSeekind = event => {
                    handleTimeUpdate={this.handleTimeUpdate}
                    handleSeekind={this.handleSeekind}
                    handleSeeked={this.handleSeeked}
-                   src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+                   src={this.props.src}
         />
             </VideoPlayerLayout>
         )

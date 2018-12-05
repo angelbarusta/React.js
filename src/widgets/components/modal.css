@@ -9,7 +9,7 @@
     background: aquamarine;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 10px aqua;
+    box-shadow: 0 0 100px aqua;
 }
 
 .Modal-close {
@@ -20,13 +20,13 @@
     top: -25px;
     border-radius: 50%;
     border: none;
-    background: red;
-    color: aqua;
+    background: #1b2341;
+    color: white;
     cursor: pointer;
 }
 
 .Modal-close::after{
-    content: "hola";
+    content: "X";
     font-weight: bold;
     font-size: 30px;
 }

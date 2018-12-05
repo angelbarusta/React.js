@@ -13,9 +13,11 @@ class Home extends Component {
         modalVisible:false,
     }
     //----------funcion para abrir el modal de descripciones
-    handleOpenModal = () => {
+    handleOpenModal = (media) => {
        this.setState({
            modalVisible:true,
+           //media:media, o media
+           mediavideo:media,
        })
     }
     //---------------------------------------------
@@ -38,16 +40,25 @@ componentDidCatch(error, info) {
             <HandleError>
             <HomeLayout>
                 <Related />
-                 <VideoPlayer
-                   autoplay
-                 />
-                  <Categories categories={this.props.data.categories} handleOpenModal={this.handleOpenModal}/>
+                 
+                  <Categories 
+                     categories={this.props.data.categories}
+                     handleOpenModal={this.handleOpenModal}
+                  />
                   {
                       this.state.modalVisible &&
                        <ModalContainer>
-                           <Modal handleClick={this.handleCloseModal}>
-                             <h1>Esto es un portal</h1>
+                           <Modal 
+                             handleClick={this.handleCloseModal}
+                            >
+                              <VideoPlayer
+                                 autoplay
+                                 src={this.state.mediavideo.src}
+                                 title={this.state.mediavideo.title}
+                              />
+
                            </Modal>
+
                        </ModalContainer>
                   }
                   
