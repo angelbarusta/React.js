@@ -16,6 +16,8 @@ class VideoPlayer extends Component {
         duration: 0,
         currentTime:0,
         loading: false,
+        lastVolumeState: null,
+	    volume: 1,
     }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,6 +64,29 @@ handleSeekind = event => {
   handleVolumenChange =event => {
     this.video.volume = event.target.value  //el .volume nos dara la funcion del volumen
   }
+
+  mute = ()  => {
+    const lastState = this.video.volume
+    this.setState({
+      lastVolumeState: lastState,
+      volume: 0
+    })
+    this.video.volume = 0
+  }
+
+  unmute = () => {
+    this.setState({
+      volume: this.state.lastVolumeState
+    })
+    this.video.volume = this.state.lastVolumeState
+  }
+
+  handleVolumeMute = event => {
+    console.log(this.video.volume)
+    this.video.volume !== 0 ? this.mute() : this.unmute()
+    console.log(this.video.volume)
+  }
+
     render() {
         return(
             <VideoPlayerLayout>
@@ -85,6 +110,8 @@ handleSeekind = event => {
                    />
                    <Volumen
                      handleVolumenChange={this.handleVolumenChange}
+                     handleClick={this.handleVolumeMute}
+			         value={this.state.volumen}
                    />
 
                 </ControlVideo>
