@@ -6,29 +6,21 @@ class Media extends PureComponent {
         author: this.props.author,// aqui se descargan datos de author de la api para poder modificarlas
     }
 //------------------------------------------------------------
-   /* handleClick = (event) => { //  stage-2
-        //funsion para cambiar el state
-        //console.log("press")
-        this.setState({
-            author: 'Angel varusta',
-        })
-        //------------------------------
-      }*/
+   handleClick = (event) => { //  stage-2
+        this.props.openModal(this.props);
+      }
 //--------------------------------------------------------------
     render() {
         const styles = {
             container: {
-                //fontSize: 21, // o fontSize:'14px'
-                //backgroundColor: '#2ECCFA',//#2ECCFA
                 color: '#1C1C1C', //color del texto
                 cursor: 'pointer',
                 width:260,
                 border: '1px solid blue',
-                
             }
         }
         return (
-            <div className="Media" onClick={this.props.handleClick}>
+            <div className="Media" onClick={this.handleClick}>
               <div className="Media-cover">
                   <img 
                        src={this.props.cover}

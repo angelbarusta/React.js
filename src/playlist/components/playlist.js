@@ -3,12 +3,12 @@ import React from 'react';
 import Media from './media.js';
 import './playlist.css';
 
-function Playlist(props) { //componente playlist functional
+const Playlist = (props) => { //componente playlist functional
         return (
             <div className="Playlist">
                 {
                     props.playlist.map((item)=>{
-                       return <Media handleClick={props.handleOpenModal} {...item} key={item.id} />
+                       return <Media openModal={props.handleOpenModal} {...item} key={item.id} />
                     })
                 }
                 
