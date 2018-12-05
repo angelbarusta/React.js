@@ -8,7 +8,7 @@ const Volumen =(props)=> {
         <button
           className="Volumenstylo"
          >
-          <div onClick={props.handleClick}>
+          <div onClick={props.handleVolumenToggle}>
             <VolumenIcon
               color ="white"
               size ={25}
