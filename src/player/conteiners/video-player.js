@@ -18,7 +18,8 @@ class VideoPlayer extends Component {
         currentTime:0,
         loading: false,
         lastVolumeState: 0,
-	    volume: 1,
+        volume: 1,
+        
     }
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -82,7 +83,7 @@ handleSeekind = event => {
     this.video.volume = this.state.lastVolumeState
   }
 
-  
+ 
   handleVolumenToggle = event => {
     console.log(this.video.volume)
     this.video.volume !== 0 ? this.mute() : this.unmute()
@@ -96,6 +97,7 @@ handleSeekind = event => {
     })
     this.video.volume = this.state.lastVolume
   }
+  //-------------------------------------state del fullscreen------------------------------------------
   handleFullScreenClick = event => {
       if (!document.webkitIsFullScreen){
           //mando a fullscreen
@@ -105,6 +107,7 @@ handleSeekind = event => {
           document.webkitExitFullscreen();
       }
   }
+  //--------------------------------------------------------------------------------------------------------------
   setRef = element => {
       this.player = element
   }
@@ -135,7 +138,7 @@ handleSeekind = event => {
                    <Volumen
                      handleVolumenChange={this.handleVolumenChange}
                      handleVolumenToggle={this.handleVolumenToggle}
-			         value={this.state.volumen}
+			         //value={this.state.volumen}
                    />
                    
                    <FullScreen

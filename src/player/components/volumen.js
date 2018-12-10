@@ -7,6 +7,7 @@ const Volumen =(props)=> {
 
         <button
           className="Volumenstylo"
+          onClick={props.Volumenrange}
          >
           <div onClick={props.handleVolumenToggle}>
             <VolumenIcon
@@ -23,7 +24,7 @@ const Volumen =(props)=> {
                  max={1}
                  step={.005} 
                  onChange={props.handleVolumenChange}
-                 value={props.value}
+                 //value={props.value}
                 />
 
            </div>
