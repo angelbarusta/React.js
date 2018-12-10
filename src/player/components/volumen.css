@@ -10,7 +10,7 @@
 }
 
 .Volumen-range {
-    transform: rotate(-90deg);
+  transform: rotate(-90deg);
   transform-origin: left bottom;
   position: absolute;
   bottom: 50px;
@@ -23,11 +23,11 @@
 }
 
 .Volumenstylo input {
-    cursor: grab;
+  cursor: grab;
   background: aqua;
   border: 1px solid aquamarine;
 }
 
-.Volumenstylo .Volumen-range {
+.Volumenstylo:hover .Volumen-range {
     display: flex;
   }
