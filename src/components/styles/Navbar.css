@@ -24,5 +24,7 @@
 }
 .Navbar__brand-user {
   margin-right: 0.5rem;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
 }

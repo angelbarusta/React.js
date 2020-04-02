@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import faker from "faker";
 
 import "./styles/Navbar.css";
-
-import FotoUser from "../components/gravatar";
-
 import logo from "../images/logo.svg";
 
-export const Navbar = () => {
+import gravatar from "./gravatar";
+
+export const Navbar = (props) => {
+  // this.props.avatarUrl
+  const { myList } = props;
+  let email_random = faker.internet.exampleEmail();
   return (
     <div className='Navbar'>
       <Link className='Navbar__brand' to='/'>
@@ -17,13 +20,31 @@ export const Navbar = () => {
         <span className='font-weight-bold'>Conf</span>
       </Link>
 
-      <Link className='Navbar__brand' to='/'>
-        <img className='Navbar__brand-user' src={FotoUser} alt='user' />
-      </Link>
+      {myList.length > 1 ? (
+        <Link className='Navbar__brand' to='/account'>
+          <img
+            className='Navbar__brand-user'
+            src={myList[myList.length - 1].avatarUrl}
+            alt='user'
+          />
+        </Link>
+      ) : (
+        <Link className='Navbar__brand' to='/account'>
+          <img
+            className='Navbar__brand-user'
+            src={gravatar(email_random)}
+            alt='user'
+          />
+        </Link>
+      )}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => {
+  return {
+    myList: state.myList
+  };
+};
 
 export default connect(mapStateToProps, null)(Navbar);
