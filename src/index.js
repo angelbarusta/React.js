@@ -32,7 +32,7 @@ const initialState = {
       lastName: faker.name.lastName(),
       email: email_random,
       jobTitle: faker.name.jobTitle(),
-      twitter: `@${faker.internet.userName()}${faker.name.lastName()}`,
+      twitter: `${faker.internet.userName()}${faker.name.lastName()}`,
       avatarUrl: gravatar(email_random)
     }
   ]
