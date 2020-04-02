@@ -1,10 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore, compose } from "redux";
+import reducer from "./redux/reducers";
 
-import './global.css';
-import App from './components/App';
+import "bootstrap/dist/css/bootstrap.css";
+import "./global.css";
 
-const container = document.getElementById('app');
+import App from "./components/App";
 
-ReactDOM.render(<App />, container);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const initialState = {};
+//este es el store e redux
+const store = createStore(reducer, initialState, composeEnhancers());
+
+const container = document.getElementById("app");
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  container
+);

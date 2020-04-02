@@ -2,6 +2,8 @@
   width: 100%;
   padding: 0.5rem 0;
   background-color: #1C3643;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Navbar__brand {
@@ -18,4 +20,9 @@
 
 .Navbar__brand-logo {
   margin-right: 0.5rem;
+  
+}
+.Navbar__brand-user {
+  margin-right: 0.5rem;
+  border-radius: 100%;
 }
