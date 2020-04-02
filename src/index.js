@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
+import faker from "faker";
+
 import reducer from "./redux/reducers";
+import gravatar from "./components/gravatar";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./global.css";
@@ -10,18 +13,27 @@ import "./global.css";
 import App from "./components/App";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let email_random = faker.internet.exampleEmail();
 
-const MY_PHOTO = `https://gravatar.com/avatar/c9af7a938eea0a3a05b1477396e15b9f?d=identicon`;
 const initialState = {
   myList: [
     {
-      id: "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      firstName: "Angel",
+      id: faker.random.uuid(),
+      firstName: "Ángel",
       lastName: "Barusta",
       email: "angel.barusta.95@gmail.com",
       jobTitle: "Front-end React",
       twitter: "angelbarusta",
-      avatarUrl: MY_PHOTO
+      avatarUrl: gravatar("angel.barusta.95@gmail.com")
+    },
+    {
+      id: faker.random.uuid(),
+      firstName: faker.internet.userName(),
+      lastName: faker.name.lastName(),
+      email: email_random,
+      jobTitle: faker.name.jobTitle(),
+      twitter: `@${faker.internet.userName()}${faker.name.lastName()}`,
+      avatarUrl: gravatar(email_random)
     }
   ]
 };

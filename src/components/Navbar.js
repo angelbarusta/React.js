@@ -7,6 +7,7 @@ import "./styles/Navbar.css";
 import logo from "../images/logo.svg";
 
 import gravatar from "./gravatar";
+import { Icon } from "semantic-ui-react";
 
 export const Navbar = (props) => {
   // this.props.avatarUrl
@@ -20,7 +21,7 @@ export const Navbar = (props) => {
         <span className='font-weight-bold'>Conf</span>
       </Link>
 
-      {myList.length > 1 ? (
+      {myList.length > 2 ? (
         <Link className='Navbar__brand' to='/account'>
           <img
             className='Navbar__brand-user'
@@ -29,12 +30,8 @@ export const Navbar = (props) => {
           />
         </Link>
       ) : (
-        <Link className='Navbar__brand' to='/account'>
-          <img
-            className='Navbar__brand-user'
-            src={gravatar(email_random)}
-            alt='user'
-          />
+        <Link className='Navbar__brand-user' to='/account'>
+          <Icon name='user' circular size='large' style={{ color: "white" }} />
         </Link>
       )}
     </div>
