@@ -10,9 +10,13 @@ import "./global.css";
 import App from "./components/App";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const initialState = {};
+const initialState = {
+  myList: []
+};
+
 //este es el store e redux
 const store = createStore(reducer, initialState, composeEnhancers());
+console.log("STORE", store);
 
 const container = document.getElementById("app");
 

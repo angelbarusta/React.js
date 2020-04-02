@@ -1,4 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
+import { NewUser } from "../redux/actions";
 
 class BadgeForm extends React.Component {
   handleClick = (e) => {
@@ -9,6 +14,9 @@ class BadgeForm extends React.Component {
     e.preventDefault();
     console.log("Form was submitted");
     console.log("PROPS", this.props);
+    const { formValues, history } = this.props;
+    this.props.NewUser(formValues);
+    // history.push("/badges");
   };
 
   render() {
@@ -80,5 +88,8 @@ class BadgeForm extends React.Component {
     );
   }
 }
+const mapDispatchToProps = {
+  NewUser
+};
 
-export default BadgeForm;
+export default withRouter(connect(null, mapDispatchToProps)(BadgeForm));
