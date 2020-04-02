@@ -9,7 +9,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: {
-    App: path.resolve(__dirname, "src/index.js")
+    app: path.resolve(__dirname, "src/index.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -97,7 +97,7 @@ module.exports = {
       publicPath: "http://localhost:3001/js"
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ["**/App.*"]
+      cleanOnceBeforeBuildPatterns: ["**/app.*"]
     })
   ]
 };
