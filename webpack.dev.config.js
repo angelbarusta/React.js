@@ -1,46 +1,62 @@
-const path = require('path');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    'home': path.resolve(__dirname, 'src/entries/home.js'),
+    App: path.resolve(__dirname, "src/index.js")
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/[name].js",
+    publicPath: "http://localhost:1111/",
+    chunkFilename: "js/[id].[chunkhash].js"
   },
   devServer: {
-    port: 9000,
+    contentBase: path.resolve(__dirname, "dist"),
+    open: true,
+    hot: true,
+    port: 1111
   },
-  devtool: 'eval-source-map',
   module: {
     rules: [
       {
-        // test: que tipo de archivo quiero reconocer,
-        // use: que loader se va a encargar del archivo
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'react', 'stage-2'],
-          }
-        },
+        test: /\.js$/,
+        use: "babel-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(jpg|png|gif|svg)$/,
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"]
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.styl$/,
+        use: ["style-loader", "css-loader", "stylus-loader"]
+      },
+      {
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         use: {
-          loader: 'url-loader',
+          loader: "file-loader", //url-loader
           options: {
-            limit: 1000000,
-            fallback: 'file-loader',
-            name: 'images/[name].[hash].[ext]',
+            //limit: 90000,
+            outputPath: "assets/"
           }
         }
-      },
+      }
     ]
-  }
-}
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public/index.html")
+    })
+  ]
+};

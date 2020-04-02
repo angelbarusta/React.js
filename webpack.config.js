@@ -1,73 +1,103 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
+const AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TersetJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
-
-module.exports = (env) => {
-  const plugins = [
-    new ExtractTextPlugin("css/[name].[hash].css")
-  ]
-
-  if (env.NODE_ENV === 'production') {
-    plugins.push(
-      new CleanWebpackPlugin(['dist'], {root: __dirname})
-    )
-  }
-
-  return {
-
-    entry: {
-        'home': path.resolve(__dirname, 'src/entries/home.js'),
-    },
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'js/[name].js',////
-      publicPath: path.resolve(__dirname, 'dist')+"/",
-      chunkFilename: 'js/[id].[chunkhash].js',
-    },
-    devServer: {
-      port: 9000,
-    },
-    module: {
-      rules: [
-        {
-          // test: que tipo de archivo quiero reconocer,
-          // use: que loader se va a encargar del archivo
-          test: /\.(js|jsx)$/,
-          exclude: /(node_modules)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['es2015', 'react', 'stage-2'],
-            }
+module.exports = {
+  entry: {
+    App: path.resolve(__dirname, "src/index.js")
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/[name].[hash].js",
+    publicPath: "http://localhost:3001/",
+    chunkFilename: "js/[id].[chunkhash].js"
+  },
+  optimization: {
+    minimizer: [new TersetJSPlugin(), new OptimizeCSSAssetsPlugin()]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: "babel-loader",
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
           },
-        },
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  minimize: true,
-                }
-              }
-            ]
-          })
-        },
-        {
-          test: /\.(jpg|png|gif|svg)$/,
-          use: {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              fallback: 'file-loader',
-              name: 'images/[name].[hash].[ext]',
-            }
+
+          "css-loader"
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader",
+          "less-loader"
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader",
+          "sass-loader"
+        ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader",
+          "stylus-loader"
+        ]
+      },
+      {
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 1000,
+            name: "[name].[hash].[ext]",
+            outputPath: "assets"
           }
-        },
-      ]
-    },
-    plugins
-  }
-}
+        }
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[hash].css",
+      chunkFilename: "css/[id].[hash].css"
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public/index.html")
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require("./modules-manifest.json")
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, "dist/js/*.dll.js"),
+      outputPath: "js",
+      publicPath: "http://localhost:3001/js"
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/App.*"]
+    })
+  ]
+};
