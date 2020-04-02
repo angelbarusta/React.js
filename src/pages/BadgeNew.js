@@ -14,7 +14,8 @@ class BadgeNew extends React.Component {
       lastName: "",
       email: "",
       jobTitle: "",
-      twitter: ""
+      twitter: "",
+      urlPhotoUser: gravatarHash("angel.barusta.95@gmail.com")
     }
   };
 
@@ -22,7 +23,8 @@ class BadgeNew extends React.Component {
     this.setState({
       form: {
         ...this.state.form,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
+        urlPhotoUser: gravatarHash(this.state.form.email)
       }
     });
   };
@@ -43,7 +45,7 @@ class BadgeNew extends React.Component {
                 twitter={this.state.form.twitter}
                 jobTitle={this.state.form.jobTitle}
                 email={this.state.form.email}
-                avatarUrl={gravatarHash(this.state.form.email)}
+                avatarUrl={this.state.form.urlPhotoUser}
               />
             </div>
 
