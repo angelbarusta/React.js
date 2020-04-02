@@ -16,7 +16,7 @@ class BadgeForm extends React.Component {
     console.log("PROPS", this.props);
     const { formValues, history } = this.props;
     this.props.NewUser(formValues);
-    // history.push("/badges");
+    history.push("/badges");
   };
 
   render() {
